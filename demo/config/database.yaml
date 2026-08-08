@@ -1,0 +1,16 @@
+# Database connection settings for pipeline components
+
+warehouse:
+  host: prod-warehouse.internal.acme.co
+  port: 5432
+  database: analytics
+  sslmode: disable
+  connection_timeout: 30
+  query_timeout: 300
+
+staging_db:
+  host: staging-db.internal.acme.co
+  port: 5432
+  database: staging
+  sslmode: prefer
+  connection_timeout: 15

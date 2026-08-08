@@ -1,0 +1,26 @@
+# dbt connection profiles
+# ⚠ This file should NOT contain plain-text credentials
+
+acme_analytics:
+  target: prod
+  outputs:
+    prod:
+      type: snowflake
+      account: acme-corp.us-east-1
+      user: DBT_SERVICE_USER
+      password: "dbtPr0dP@ssword!"
+      role: TRANSFORMER
+      database: ANALYTICS_PROD
+      warehouse: DBT_WH
+      schema: TRANSFORMED
+      threads: 8
+
+    dev:
+      type: postgres
+      host: dev-warehouse.internal.acme.co
+      user: dbt_dev
+      password: "DevP@ss123"
+      port: 5432
+      dbname: analytics_dev
+      schema: dbt_dev
+      threads: 4

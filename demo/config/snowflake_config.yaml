@@ -1,0 +1,16 @@
+# Snowflake connection configuration
+# Used by dbt and custom ETL scripts
+
+snowflake:
+  account: acme-corp.us-east-1
+  user: ETL_SERVICE_USER
+  password: "SnowflakeP@ss2024!"
+  database: ANALYTICS_PROD
+  warehouse: ETL_WH_LARGE
+  role: SYSADMIN
+  schema: RAW_SALESFORCE
+
+  # Connection settings
+  client_session_keep_alive: true
+  query_timeout: 300
+  login_timeout: 60
